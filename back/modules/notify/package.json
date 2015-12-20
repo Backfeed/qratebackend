@@ -1,0 +1,19 @@
+{
+  "name": "notify",
+  "version": "0.0.1",
+  "description": "Dependencies for a Serverless Module written in Node.js",
+  "author": "me",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "dependencies": {
+    "https": "1.0.0",
+    "serverless-helpers-js": "~0.0.3",
+    "url": "0.11.0"
+  }
+}
