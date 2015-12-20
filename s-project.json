@@ -1,0 +1,27 @@
+{
+  "name": "qratebackend",
+  "version": "0.0.1",
+  "profile": "serverless-0",
+  "location": "https://github.com/...",
+  "author": "",
+  "description": "",
+  "domain": "backfeed.cc",
+  "stages": {
+    "development": [
+      {
+        "region": "us-east-1",
+        "iamRoleArnLambda": "arn:aws:iam::051563103010:role/qratebackend-development-r-IamRoleLambda-L3PTHVK2IOLM",
+        "regionBucket": "serverless.useast1.backfeed.cc"
+      }
+    ],
+    "beta": [
+      {
+        "region": "us-east-1",
+        "iamRoleArnLambda": "arn:aws:iam::051563103010:role/qratebackend-beta-r-IamRoleLambda-OFAPLKI77KDX",
+        "regionBucket": "serverless.useast1.backfeed.cc"
+      }
+    ]
+  },
+  "custom": {},
+  "plugins": []
+}
