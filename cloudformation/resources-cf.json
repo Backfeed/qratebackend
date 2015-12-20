@@ -17,14 +17,16 @@
       "Type": "String",
       "AllowedValues": [
         "development",
-        "beta"
+        "beta",
+        "production"
       ]
     },
     "DataModelStage": {
       "Type": "String",
       "AllowedValues": [
         "development",
-        "beta"
+        "beta",
+        "production"
       ]
     },
     "NotificationEmail": {
