@@ -12,7 +12,7 @@
       "endpoints": [
         {
           "path": "notify/slack",
-          "method": "GET",
+          "method": "POST",
           "authorizationType": "none",
           "apiKeyRequired": false,
           "requestParameters": {},

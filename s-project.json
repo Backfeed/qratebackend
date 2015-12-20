@@ -11,21 +11,24 @@
       {
         "region": "us-east-1",
         "iamRoleArnLambda": "arn:aws:iam::051563103010:role/qratebackend-development-r-IamRoleLambda-L3PTHVK2IOLM",
-        "regionBucket": "serverless.useast1.backfeed.cc"
+        "regionBucket": "serverless.useast1.backfeed.cc",
+        "restApiId": "d1da5cnf2i"
       }
     ],
     "beta": [
       {
         "region": "us-east-1",
         "iamRoleArnLambda": "arn:aws:iam::051563103010:role/qratebackend-beta-r-IamRoleLambda-OFAPLKI77KDX",
-        "regionBucket": "serverless.useast1.backfeed.cc"
+        "regionBucket": "serverless.useast1.backfeed.cc",
+        "restApiId": "d1da5cnf2i"
       }
     ],
     "production": [
       {
         "region": "us-east-1",
         "iamRoleArnLambda": "arn:aws:iam::051563103010:role/qratebackend-production-r-IamRoleLambda-18O1TZBGAS0K9",
-        "regionBucket": "serverless.useast1.backfeed.cc"
+        "regionBucket": "serverless.useast1.backfeed.cc",
+        "restApiId": "d1da5cnf2i"
       }
     ]
   },
