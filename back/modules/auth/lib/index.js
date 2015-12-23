@@ -1,0 +1,5 @@
+/**
+ * Lib
+ */
+
+module.exports = {};

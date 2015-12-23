@@ -1,0 +1,22 @@
+{
+  "name": "auth",
+  "version": "0.0.1",
+  "description": "Dependencies for a Serverless Module written in Node.js",
+  "author": "me",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.2.26",
+    "crypto": "0.0.3",
+    "node-uuid": "^1.4.7",
+    "serverless-helpers-js": "~0.0.3",
+    "underscore": "^1.8.3",
+    "util": "^0.10.3"
+  }
+}
