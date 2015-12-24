@@ -153,9 +153,9 @@ function getUser(email, fn) {
 function log(prefix) {
 
   return function() {
-    console.log('***************** ' + prefix + ' *******************');
+    console.log('***************** ' + 'AUTH: ' prefix + ' *******************');
     _.each(arguments, function(msg, i) { console.log(msg); });
-    console.log('***************** /' + prefix + ' *******************');
+    console.log('***************** /' + 'AUTH: ' prefix + ' *******************');
     console.log('\n');
   };
 

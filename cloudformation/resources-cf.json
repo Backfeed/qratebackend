@@ -158,7 +158,8 @@
                 "dynamodb:PutItem"
               ],
               "Effect": "Allow",
-              "Resource": "arn:aws:dynamodb:us-east-1:051563103010:table/qrateUsers"
+              "Resource": "arn:aws:dynamodb:us-east-1:051563103010:table/qrateUsers",
+              "Resource": "arn:aws:dynamodb:us-east-1:051563103010:table/qrateLinks"
             },
             {
               "Effect": "Allow",
