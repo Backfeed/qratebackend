@@ -8,15 +8,17 @@ module.exports = {
   sendVerificationEmail: sendVerificationEmail,
   getUserForVerification: getUserForVerification,
   updateUserAfterVerification: updateUserAfterVerification,
+  getCognitoToken: getCognitoToken,
   log: log
 
 }
 
 var _ = require('underscore');
 var crypto = require('crypto');
+var uuid = require('node-uuid');
 var AWS = require('aws-sdk');
 AWS.config.update({region:'us-east-1'});
-var uuid = require('node-uuid');
+var cognitoidentity = new AWS.CognitoIdentity();
 var dynamodb = new AWS.DynamoDB();
 var ses = new AWS.SES();
 
@@ -117,6 +119,7 @@ function storeUser(email, password, salt, fn) {
 
 
 function getUser(email, fn) {
+  hLog("getUser", "email", email, "fn", fn);
   dynamodb.getItem({
     TableName: 'qrateUsers',
     Key: {
@@ -125,9 +128,12 @@ function getUser(email, fn) {
       }
     }
   }, function(err, data) {
-        hLog("data", data);
-    if (err) return fn(err);
+    if (err) {
+      hLog("CB: getUser: err", err);
+      return fn(err);
+    }
     else {
+      hLog("CB: getUser: data", data);
       if ('Item' in data) {
         var hash = data.Item.passwordHash.S;
         var salt = data.Item.passwordSalt.S;
@@ -231,4 +237,19 @@ function updateUserAfterVerification(email, fn) {
       }
     },
     fn);
+}
+
+function getCognitoToken(email, fn) {
+  log("getCognitoToken", "email", email, "fn", fn);
+  var param = {
+    IdentityPoolId: 'us-east-1:b10673e0-1654-4519-9938-2d624de0532a',
+    Logins: {} // To have provider name in a variable
+  };
+  param.Logins['login.backfeed.qrate'] = email;
+  cognitoidentity.getOpenIdTokenForDeveloperIdentity(param,
+    function(err, data) {
+      log("cb; getCognitoToken", "err", err, "data", data);
+      if (err) return fn(err); // an error occurred
+      else fn(null, data.IdentityId, data.Token); // successful response
+    });
 }
