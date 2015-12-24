@@ -140,7 +140,8 @@ function getUser(email, fn) {
         var verified = data.Item.verified.BOOL;
         var reputation = data.Item.reputation.N;
         var tokens = data.Item.tokens.N;
-        fn(null, hash, salt, verified, reputation, tokens);
+        var uuid = data.Item.uuid.S;
+        fn(null, hash, salt, verified, reputation, tokens, uuid);
       } else {
         fn(null, null); // User not found
       }

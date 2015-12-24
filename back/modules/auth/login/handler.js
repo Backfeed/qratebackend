@@ -22,7 +22,7 @@ module.exports.handler = function(event, context) {
 
   log("email", email, "password", clearPassword);
 
-  helpers.getUser(email, function(err, correctHash, salt, verified, reputation, tokens) {
+  helpers.getUser(email, function(err, correctHash, salt, verified, reputation, tokens, uuid) {
 
     log("getUser", "correctHash", correctHash, "salt", salt, "verified", verified, "reputation", reputation, "tokens", tokens);
 
@@ -56,6 +56,8 @@ module.exports.handler = function(event, context) {
               // Login ok
               log('User logged in: ' + email);
               context.succeed({
+                email: email,
+                uuid: uuid,
                 correctHash: correctHash,
                 salt: salt,
                 verified: verified,
