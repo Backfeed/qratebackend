@@ -17,6 +17,10 @@ var log = helpers.log('VERIFY USER FUNCTION');
 log('Loading');
 
 module.exports.handler = function(event, context) {
+  
+  log("event", event);
+  log("context", context);
+
   var email = event.email;
   var verifyToken = event.verify;
 

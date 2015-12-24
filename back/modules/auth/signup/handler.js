@@ -18,8 +18,12 @@ log('Loading');
 
 module.exports.handler = function(event, context) {
 
+  log("event", event);
+  log("context", context);
+  
   var email = event.email;
   var clearPassword = event.password;
+
 
   helpers.computeHashSignup(clearPassword, function(err, salt, hash) {
     if (err) {
