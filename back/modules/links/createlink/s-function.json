@@ -1,17 +1,17 @@
 {
   "functions": {
-    "create": {
+    "createlink": {
       "custom": {
         "excludePatterns": [],
         "envVars": []
       },
-      "handler": "modules/links/create/handler.handler",
+      "handler": "modules/links/createlink/handler.handler",
       "timeout": 6,
       "memorySize": 1024,
       "eventSourceArn": "",
       "endpoints": [
         {
-          "path": "links/create",
+          "path": "links/createlink",
           "method": "GET",
           "authorizationType": "none",
           "apiKeyRequired": false,

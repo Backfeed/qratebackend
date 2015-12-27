@@ -16,14 +16,14 @@ var ses = new AWS.SES();
 
 var hLog = log('HELPERS');
 
-function create() {
-  dynamodb.PutItem({
+function create(submitterId, url, tag, fn) {
+  dynamodb.putItem({
     TableName: 'qrateLinks',
     Item: {
-      id: { S: { uuid.u4() } },
-      submitterId: { S: { submitterId } },
-      url: { S: { url } },
-      tag: { S : { tag} }
+      id: { S: uuid.v4() },
+      submitterId: { S: submitterId },
+      url: { S: url },
+      tag: { S : tag }
     }
   }, function(err, data) {
     if (err) return fn(err);
@@ -34,9 +34,9 @@ function create() {
 function log(prefix) {
 
   return function() {
-    console.log('***************** ' + 'LINKS' + prefix + ' *******************');
+    console.log('***************** ' + 'LINKS ' + prefix + ' *******************');
     _.each(arguments, function(msg, i) { console.log(msg); });
-    console.log('***************** /' + 'LINKS' + prefix + ' *******************');
+    console.log('***************** /' + 'LINKS ' + prefix + ' *******************');
     console.log('\n');
   };
 

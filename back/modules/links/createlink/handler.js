@@ -13,7 +13,7 @@ var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 
 var helpers = require('../lib/helpers.js');
 
-var log = helpers.log('CREATE LINK FUNCTION');
+var log = helpers.log('CREATE FUNCTION');
 
 log('Loading');
 
